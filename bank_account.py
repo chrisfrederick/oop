@@ -30,3 +30,31 @@ ba2 = BankAccount()
 ba2.display_account_info()
 ba2.deposit(500).deposit(500).withdraw(50).withdraw(50).withdraw(50).withdraw(50).yield_interest().display_account_info()
 
+
+
+class User:
+    bank_name = "Chris' Bank of Eternal Debt"
+
+    def __init__(self, name, email):
+        self.name =name
+        self.email = email
+        self.account = BankAccount(int_rate=0.02, balance=0)
+
+    def deposit(self, amount):
+        self.account.deposit(amount)
+        return self
+
+    def withdrawl(self, amount):
+        self.account.withdraw(amount)
+        return self
+
+    def display_balance(self):
+        print(self.account.display_account_info())
+        return self
+
+
+chris = User("Christopher Frederick", "chris@email.com")
+nysha = User("Nysha Sims", "nysha@wmail.com")
+
+chris.deposit(600).deposit(18000).display_balance()
+nysha.deposit(700).withdrawl(100).deposit(700).display_balance()
