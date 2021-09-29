@@ -16,3 +16,8 @@ chris = Jedi("Chris", 17, "Red")
 
 
 print(nysha)
+
+
+class Sith(Jedi):
+    def __init__(self, name, attack, ls_color):
+        super().__init__(name, attack, ls_color)
